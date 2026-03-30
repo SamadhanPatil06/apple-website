@@ -28,13 +28,13 @@ const noChangeParts = [
 ];
 
 const performanceImages = [
-  { id: "p1", src: "/performance1.png" },
-  { id: "p2", src: "/performance2.png" },
-  { id: "p3", src: "/performance3.png" },
-  { id: "p4", src: "/performance4.png" },
-  { id: "p5", src: "/performance5.jpg" },
-  { id: "p6", src: "/performance6.png" },
-  { id: "p7", src: "/performance7.png" },
+  { id: "p1", src: "images/performance1.png" },
+  { id: "p2", src: "images/performance2.png" },
+  { id: "p3", src: "images/performance3.png" },
+  { id: "p4", src: "images/performance4.png" },
+  { id: "p5", src: "images/performance5.jpg" },
+  { id: "p6", src: "images/performance6.png" },
+  { id: "p7", src: "images/performance7.png" },
 ];
 
 const performanceImgPositions = [
