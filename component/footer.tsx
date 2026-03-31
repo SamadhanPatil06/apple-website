@@ -1,9 +1,29 @@
-import React from 'react'
+import { footerLinks } from "@/section/prop";
 
-const footer = () => {
+const Footer = () => {
   return (
-    <div></div>
-  )
-}
+    <footer>
+      <div className="info">
+        <p>
+          More ways to shop: Find an Apple Store or other retailer near you. Or
+          call 989 898 9898
+        </p>
+        <img src="/images/logo.svg" alt="Logo" />
+      </div>
+      <hr />
+      <div className="links">
+        <p>Copyright © 2025 Apple Inc. All rights reserved.</p>
 
-export default footer
+        <ul>
+          {footerLinks.map(({ link, label }) => (
+            <li key={label}>
+              <a href={link}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
