@@ -1,3 +1,4 @@
+
 import useMacbookStore from "@/store";
 import { noChangeParts } from "@/section/prop";
 import { useGLTF, useTexture } from "@react-three/drei";

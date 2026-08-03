@@ -1,11 +1,12 @@
+
 "use client";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { performanceImages, performanceImgPositions } from "@/section/prop";
+import { performanceImages,performanceImgPositions } from "@/section/prop";
 import { useMediaQuery } from "react-responsive";
 
-const performance = () => {
+const Performance = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const sectionRef = useRef(null);
 
@@ -14,6 +15,7 @@ const performance = () => {
       const sectionEl = sectionRef.current;
       if (!sectionEl) return;
 
+      // Text Animation
       gsap.fromTo(
         ".content p",
         { opacity: 0, y: 10 },
@@ -33,6 +35,7 @@ const performance = () => {
 
       if (isMobile) return;
 
+      // Image Positioning Timeline
       const tl = gsap.timeline({
         defaults: { duration: 2, ease: "power1.inOut", overwrite: "auto" },
         scrollTrigger: {
@@ -44,6 +47,7 @@ const performance = () => {
         },
       });
 
+      // Position Each Performance Image
       performanceImgPositions.forEach((item) => {
         if (item.id === "p5") return;
 
@@ -70,7 +74,7 @@ const performance = () => {
             key={index}
             src={item.src}
             className={item.id}
-            alt={`performance Image #${index + 1}`}
+            alt={`Performance Image #${index + 1}`}
           />
         ))}
       </div>
@@ -92,4 +96,4 @@ const performance = () => {
     </section>
   );
 };
-export default performance;
+export default Performance;

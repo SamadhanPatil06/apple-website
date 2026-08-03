@@ -1,13 +1,14 @@
+
 "use client";
 import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const Showcase = () => {
-  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+  const isTablet = useMediaQuery({ query: "max-width: 1024px" });
 
   useGSAP(() => {
     if (!isTablet) {
@@ -22,7 +23,7 @@ const Showcase = () => {
       });
 
       timeline
-        .to(".mask img", {
+        .to(".aftab img", {
           transform: "scale(1.1)",
         })
         .to(".content", { opacity: 1, y: 0, ease: "power1.in" });
@@ -33,7 +34,7 @@ const Showcase = () => {
     <section id="showcase">
       <div className="media">
         <video src="/video/game.mp4" loop muted autoPlay playsInline />
-        <div className="mask">
+        <div className="aftab">
           <img src="/images/mask-logo.svg" alt="mask-svg" />
         </div>
       </div>

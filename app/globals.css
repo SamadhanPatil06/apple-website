@@ -191,7 +191,7 @@ body {
         @apply w-full object-cover object-center;
       }
 
-      .mask {
+      .aftab {
         @apply absolute h-full top-3 md:top-0 lg:-top-20 xl:top-0;
 
         img {

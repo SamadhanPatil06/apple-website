@@ -14,8 +14,13 @@ const fadeMeshes = (group: THREE.Group | null, opacity: number) => {
 
   group.traverse((child) => {
     if (child instanceof THREE.Mesh) {
-      (child.material.transparent = true),
-        gsap.to(child.material, { opacity, duration: ANIMATION_DURATION });
+      const materials = Array.isArray(child.material)
+        ? child.material
+        : [child.material];
+      materials.forEach((mat) => {
+        mat.transparent = true;
+        gsap.to(mat, { opacity, duration: ANIMATION_DURATION });
+      });
     }
   });
 };
